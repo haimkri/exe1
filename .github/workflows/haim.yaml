@@ -1,12 +1,14 @@
-name: My First Action
-
-on: push  # Runs when code is pushed
-
+name: Hello
+on:
+  push:
+    branches: [ main ]
 jobs:
-  my-job: #Here you put the name of the job
-    runs-on: ubuntu-latest # The CI-CD pipeline will run on Ubuntu
+  my-hello-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        run: git clone https://github.com/berezovsky13/nodejs.git  # Gets the latest code, in other words it does 'git clone' 
-      - name: Print Hello World
-        run: echo "Hello, GitHub Actions!" # This is just the command
+    - name: Say hello
+      run: echo "Hello dear class"
+    - name: Show data
+      run: date
+    - name: List files
+      run: ls -la
